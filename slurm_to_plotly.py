@@ -35,7 +35,7 @@ def slurm_output_to_csv(slurm_id):
 				process = re.search("(?<=^proc: )[0-9]+",l).group(0)
 				timestamp = re.search("(?<=time: )[0-9]+\.[0-9]+",l).group(0)
 				mem = re.search("pmem\(.*\)",l).group(0)
-				value = re.search("(?<=vms=)[0-9]+",mem).group(0)
+				value = re.search("(?<=rss=)[0-9]+",mem).group(0)
 				tag="mem"
 				write=True
 			elif looptime_pattern.match(l):
